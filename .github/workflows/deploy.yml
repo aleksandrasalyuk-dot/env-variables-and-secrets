@@ -5,7 +5,7 @@ on:
       - main
       - dev
 env: 
-  MONGOB_DB_NAME: gha-demo
+  MONGOB_DB_NAME: ${{ secrets.MONGODB_DB_NAME }}
 jobs:
   test:
     environment: testing
@@ -32,4 +32,4 @@ jobs:
     steps:
       - name: Output information
         run: |        
-          echo "..."
+          echo "${{ secrets.MONGODB_DB_NAME }}"
